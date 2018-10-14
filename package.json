@@ -1,11 +1,11 @@
 {
-  "name": "node",
+  "name": "face-recognition",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +19,5 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
-  },
-  "description": ""
+  }
 }
