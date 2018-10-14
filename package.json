@@ -17,5 +17,8 @@
     "knex": "^0.15.2",
     "node-gyp": "^3.8.0",
     "pg": "^7.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
