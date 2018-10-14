@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
 
+//Controllers
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
@@ -19,18 +20,21 @@ const db = knex({
 });
 
 db.select('*').from('users');
+
+
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use(cors());
 
+
+
 /*-----------------------         ROUTES       -------------------*/
 
-app.get('/', (req, res) => {res.send('it is working');});
+app.get('/', (req, res) => {res.send(database.users);});
 
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, bcrypt, db)});
 
-app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt)});
+app.post('/register', (req, res) => {register.handleRegister(req, res, bcrypt, db)});
 
 app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)});
 
