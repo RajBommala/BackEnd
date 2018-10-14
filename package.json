@@ -1,0 +1,28 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RajBommala/BackEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RajBommala/BackEnd/issues"
+  },
+  "homepage": "https://github.com/RajBommala/BackEnd#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "clarifai": "^2.8.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "pg": "^7.5.0"
+  }
+}
