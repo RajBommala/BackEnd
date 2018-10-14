@@ -16,9 +16,7 @@
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "node-gyp": "^3.8.0",
+    "nodemon": "^1.18.4",
     "pg": "^7.5.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
   }
 }
