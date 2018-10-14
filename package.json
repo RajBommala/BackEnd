@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-   
     "start": "nodemon server.js"
   },
   "repository": {
@@ -25,6 +24,7 @@
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "nodemon": "^1.18.4",
-    "pg": "^7.5.0"
+    "pg": "^7.5.0",
+    "require": "^2.4.20"
   }
 }
