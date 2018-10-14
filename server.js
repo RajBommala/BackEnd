@@ -29,7 +29,7 @@ app.get('/', (req, res) => {res.send('it is working');});
 
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, bcrypt, db)});
 
-app.post('/register', (req, res) => {register.handleRegister(req, res, bcrypt, db)});
+app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt)});
 
 app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)});
 
