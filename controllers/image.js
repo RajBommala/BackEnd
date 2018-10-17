@@ -1,33 +1,31 @@
-const Clarifai = require('clarifai'); //we import to use the private key
+const Clarifai = require('clarifai');
 
-//Add private API key. We add it in the server so that users cannot see it in the Network tab of the broswer.
-//Security concern.
 const app = new Clarifai.App({
-    apiKey: process.env.API_KEY_CLARIFAI //actual key saved in Heroku config vars
+  apiKey: process.env.API_KEY_CLARIFAI
 });
 
 const handleApiCall = (req, res) => {
-     //call the api in image onSubmit func
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
-    .then(data => { 
-        res.json(data);
+  app.models
+    .predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
+    .then(data => {
+      res.json(data);
     })
-    .catch(err => res.status(400).json('Unable to work with Clarifai API'))
-}
+    .catch(err => res.status(400).json('unable to work with API'));
+};
 
-const handleImage = (req , res, db) => {
-    const { id } = req.body;
-    db('users').where('id' , '=' , id)
-        .increment('entries' , 1)
-        .returning('entries')
-        .then(entries => {
-            //console.log(entries[0]);
-            res.json(entries[0]);
-        })
-        .catch(err => res.status(400).json('Unable to get Entry count'))  
-}
+const handleImage = (req, res, db) => {
+  const { id } = req.body;
+  db('users')
+    .where('id', '=', id)
+    .increment('entries', 1)
+    .returning('entries')
+    .then(entries => {
+      res.json(entries[0]);
+    })
+    .catch(err => res.status(400).json('unable to get entries'));
+};
 
 module.exports = {
-    handleImage,
-    handleApiCall
-}
+  handleImage,
+  handleApiCall
+};
